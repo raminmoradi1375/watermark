@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>watermark</title>
+    <style>
+        #continer {
+            width: 300px;
+            height: 300px;
+            background-color: aliceblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            touch-action: none;
+            overflow: hidden;
+
+
+        }
+
+        #item {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img id="item" src="./123.png" width="50" height="50" ondragstart="dragx(event)" draggable="true" alt="" />
+
+    <div id="continer" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+
+    </div>
+
+
+
+
+
+    <script>
+
+        let con = document.getElementById('continer');
+        let item = document.getElementById('item');
+
+        let active = false;
+
+        let curentX;
+        let curentY;
+
+        let initX;
+        let initY;
+
+        let ofsetX = 0;
+        let ofsetY = 0;
+
+
+
+
+        con.addEventListener('mousedown', dragStart);
+        con.addEventListener('mouseup', dragEnd);
+        con.addEventListener('mousemove', drag);
+
+
+        function dragStart(e) {
+
+            initX = e.clientX - ofsetX;
+            initY = e.clientY - ofsetY;
+
+            if (e.target === item) {
+                active = true;
+            }
+        }
+
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function dragEnd(e) {
+            initX = curentX
+            initY = curentY
+            active = false
+        }
+
+        function dragx(e) {
+            console.log(e.target.id)
+            e.dataTransfer.setData("text", e.target.id);
+        }
+
+        function drop(ev) {
+            item.removeAttribute("draggable");
+            item.removeAttribute("ondragstart");
+            con.removeAttribute("ondrop");
+            con.removeAttribute("ondragover");
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+        function drag(e) {
+
+            if (active) {
+
+                curentX = e.clientX - initX;
+                curentY = e.clientY - initY;
+
+                ofsetX = curentX
+                ofsetY = curentY
+
+                setTranslate(curentX, curentY, item);
+
+            }
+        }
+
+        function setTranslate(xPos, yPos, el) {
+            el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+        }
+
+
+    </script>
+
+</body>
+
+</html>
