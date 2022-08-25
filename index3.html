@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>watermark</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="./asset/css/bootstrap/bootstrap-icon.css">
+    <link rel="stylesheet" href="./asset/css/bootstrap/bootstrap-main.css">
+    <link rel="stylesheet" href="./asset/css/style.css">
+</head>
+
+<body>
+
+    <!-- // contaner  -->
+    <div class="container bg-dark d-flex flex-row">
+
+        <!-- // main script  -->
+
+        <!-- // box edit and view  -->
+        <div class="col-8  flexing flex-column">
+
+            <!-- // box view image  -->
+            <div class="box-photo rounded mt-3 col-12">
+                <div id="img-view"></div>
+            </div>
+
+            <!-- // box edit button  -->
+            <div class="mt-2 p-2 col-12">
+                <!-- // box edit  -->
+                <div class="flexing  mt-2 ">
+
+                    <div class="flexing flex-column">
+
+
+                        <!-- // box item zoom  -->
+                        <div class="p-1" id="zoom-item-box">
+
+
+                            <div class="flexing flex-row">
+                                <!-- // cansel item  -->
+                                <div id="cansel-zoom" class="p-1 m-1 text-white">
+                                    <i class="bi bi-x-circle-fill cursor-p fs-3"></i>
+                                </div>
+
+                                <!-- // zoom plus  -->
+                                <div id="zoom-plus" class="p-1 m-1 text-white">
+                                    <i class="bi bi-zoom-in cursor-p fs-4"></i>
+                                </div>
+
+                                <!-- // zoom mines  -->
+                                <div id="zoom-mines" class="p-1 m-1 text-white">
+                                    <i class="bi bi-zoom-out cursor-p fs-4"></i>
+                                </div>
+
+                                <!-- // zoom arrow top  -->
+                                <div id="zoom-arrow-top" class="p-1 m-1 text-white">
+                                    <i class="bi bi-arrow-up-circle cursor-p fs-4"></i>
+                                </div>
+
+
+                                <!-- // zoom arrow left  -->
+                                <div id="zoom-arrow-left" class="p-1 m-1 text-white">
+                                    <i class="bi bi-arrow-left-circle cursor-p fs-4"></i>
+                                </div>
+
+                                <!-- // zoom arrow right  -->
+                                <div id="zoom-arrow-right" class="p-1 m-1 text-white">
+                                    <i class="bi bi-arrow-right-circle cursor-p fs-4"></i>
+                                </div>
+
+                                <!-- // zoom arrow down  -->
+                                <div id="zoom-arrow-down" class="p-1 m-1 text-white">
+                                    <i class="bi bi-arrow-down-circle cursor-p fs-4"></i>
+                                </div>
+
+                                <!-- // zoom arrow default  -->
+                                <div id="zoom-arrow-default" class="p-1 m-1 text-white">
+                                    <i class="bi bi-aspect-ratio cursor-p fs-3"></i>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                        <!-- // box item filter -->
+                        <div class="p-1" id="filter-item-box">
+
+                            <div class="flexing flex-row">
+                                <!-- // cansel item filter -->
+                                <div id="cansel-filter" class="p-1 m-1 text-white">
+                                    <i class="bi bi-x-circle-fill cursor-p fs-3"></i>
+                                </div>
+
+                                <!-- // boxt item blur -->
+                                <div id="filter-blur" class="p-1 m-1 text-white">
+                                    <i class="bi bi-magic cursor-p fs-4"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- // box upload   image    -->
+                        <div id="upload-image-main" class="p-2 text-white ">
+                            <label for="upload-image-background" class="flexing flex-column"><i
+                                    class="bi bi-cloud-arrow-up-fill fs-2 cursor-p"></i> </label>
+                            <input type="file" id="upload-image-background" hidden="true" />
+                        </div>
+
+                    </div>
+
+
+                    <!-- // box view eidt  -->
+                    <div class="view-edit">
+
+                        <div class="flexing flex-row">
+
+                            <!-- // box zoom edit  -->
+                            <div id="edit-zoom" class="p-1 text-white flexing flex-column">
+                                <i class="bi bi-zoom-in cursor-p fs-4"></i>
+                            </div>
+
+                            <!-- // box filter edit  -->
+                            <div id="edit-filter" class="p-1 text-white flexing flex-column">
+                                <i class="bi bi-sliders cursor-p fs-4"></i>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- // box image or logo  -->
+        <div class="col-4 bg-info">2</div>
+
+
+    </div>
+
+
+
+    <!-- // script  -->
+    <script src="./asset/js/script.js"></script>
+</body>
+
+</html>
